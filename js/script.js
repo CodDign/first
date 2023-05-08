@@ -6,12 +6,25 @@
 //     alert(1);
 // }
 
-// alert('Hi');
-// const a = confirm('M?');
-// console.log(a);
-
-const answer = prompt('18?',  '');
-console.log(answer);
 
 
-console.log(typeof(null));
+const numberOfFilm = +prompt('Сколько фильмов', '');
+
+const personalMovieDB = {
+    count: numberOfFilm,
+    movies:{},
+    actors:{},
+    genres:[],
+    privat:false
+};
+
+const film_1 = prompt('Какой последний фильм', '');
+const film_1_reviev = prompt('Оценка', '');
+
+const film_2 = prompt('Какой последний фильм', '');
+const film_2_reviev = prompt('Оценка', '');
+
+personalMovieDB.movies[film_1] = film_1_reviev; 
+personalMovieDB.movies[film_2] = film_2_reviev;
+
+console.log(personalMovieDB);
