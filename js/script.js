@@ -18,13 +18,33 @@ const personalMovieDB = {
     privat:false
 };
 
-const film_1 = prompt('Какой последний фильм', '');
-const film_1_reviev = prompt('Оценка', '');
+let film;
+let reviev;
 
-const film_2 = prompt('Какой последний фильм', '');
-const film_2_reviev = prompt('Оценка', '');
+for (let i = 0; i < 2; i++) {
+    
+    film = prompt('Какой последний фильм', '');
+    reviev = +prompt('Оценка', '');
+    
+    if (film == "" || film == null || film.length > 50 || reviev == null || reviev == "" || isNaN(reviev)) {
 
-personalMovieDB.movies[film_1] = film_1_reviev; 
-personalMovieDB.movies[film_2] = film_2_reviev;
+        i--;
+        console.log("no");
+    } else {
+        personalMovieDB.movies[film] = reviev; 
+        console.log("yes");
+    }
+    
+}
 
 console.log(personalMovieDB);
+
+if(personalMovieDB.count<10){
+    alert("Мало");
+} else if(personalMovieDB.count >= 10 && personalMovieDB.count < 30){
+    alert("Норм");
+} else if(personalMovieDB.count >= 30){
+    alert("Класно");
+} else{
+    alert("Ошибка");
+}
